@@ -1,0 +1,12 @@
+{
+    "server": {
+        "port": 8080,
+        "checkImages": 50000,
+        "openbrowser": false,
+        "browserArg": "start chrome --kiosk"
+    },
+    "client": {
+        "interval": 5000,
+        "imageFolder": "Path"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "name": "display",
+    "version": "1.0.0",
+    "description": "Shipping Display",
+    "main": "main.js",
+    "bin": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node bin.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "⁰.18.0",
+        "diskusage": "¹.1.1",
+        "express": "^4.17.1",
+        "fs": "0.0.1-security",
+        "node-powershell": "⁴.0.0",
+        "open": "^8.0.5",
+        "os": "⁰.1.1",
+        "path": "^0.12.7",
+        "tasklist": "³.1.1"
+    },
+    "pkg": {
+        "assets": [
+            "./node_modules/fs/**",
+            "./node_modules/path/**",
+            "./node_modules/child_process/**",
+            "./node_modules/express/**",            
+            "index.html"        
+        ]
+    }
+}

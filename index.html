@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="600">
+<title>Display</title>
+<style>
+    html, body {margin:0;padding:0;height:100%}
+    div {width:100%;height:100%;background:red;}
+    div > div {      
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-color: #fff;  
+    }
+    div.contain {
+      background-size: contain;
+    }	
+</style>
+<!--<script src="ChangeImage.js"></script>-->
+<script src="JS/jquery-3.6.0.min.js"></script>
+<script>
+  function GetImage(){
+    $.get('http://localhost:8080/data', {}, function(data){      
+      if(data != ''){
+        document.getElementById("bg").style.backgroundImage = 'url(Images/' + data + ')';      
+      }      
+    });    
+  }
+
+  GetImage();
+  $.get('http://localhost:8080/config', {}, function(data){      
+      setInterval(GetImage, data.interval);      
+    });
+       
+</script>
+</head>
+<body>    
+	<div>
+		<div class="contain" id = "bg" style="background-image: url(Images/DO_NOT_DELETE.jpg);"></div>
+	</div>	
+</body>
+</html>
