@@ -21,8 +21,8 @@
 <script>
   function GetImage(){
     $.get('http://localhost:8080/data', {}, function(data){      
-      if(data != ''){
-        document.getElementById("bg").style.backgroundImage = 'url(Images/' + data + ')';      
+      if(data != ''){                
+        document.getElementById("bg").style.backgroundImage = 'url(Images/' + data.replace(/ /g, '%20') + ')';              
       }      
     });    
   }
@@ -36,7 +36,7 @@
 </head>
 <body>    
 	<div>
-		<div class="contain" id = "bg" style="background-image: url(Images/DO_NOT_DELETE.jpg);"></div>
+		<div class="contain" id="bg" style="background-image: url(Images/DO_NOT_DELETE.jpg);"></div>
 	</div>	
 </body>
 </html>

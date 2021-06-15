@@ -42,7 +42,7 @@ app.listen(config.server.port);
 console.log('\n\x1b[32m' + 'Server listening on port ' + config.server.port + '\x1b[37m');
 
 //Open browser
-if (config.server.openbrowser){
+if (config.server.openbrowser){    
     childProcess.exec(config.server.browserArg + ' http://localhost:' + config.server.port);
 }
 
@@ -54,7 +54,7 @@ var targetFiles; //Used to hold the list of images
 //Find all of the jpgs in the image folder
 function GetImages() {
     var files = fs.readdirSync('public/Images/');
-    targetFiles = files.filter(function(file) {
+    targetFiles = files.filter(function(file) {        
         return path.extname(file).toLowerCase() === EXTENSION;
     });
     targetFiles = targetFiles.filter(i => i !== 'DO_NOT_DELETE.jpg'); //Remove the starting image from the list
@@ -62,7 +62,7 @@ function GetImages() {
     count = 0;
     targetFiles.forEach(element => {
         count++;    
-    });
+    });    
 }
 
 GetImages();
@@ -76,6 +76,6 @@ function ChangeImage() {
     }
     else {
         current ++;
-    }    
+    }        
     return targetFiles[current].toString();    
 }
